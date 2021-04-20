@@ -40,4 +40,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+public function questions(){
+ return $this->hasmany(Question::class);
+}
+
+public function setTitleAttributes($value){
+    $this->attrubutes['title']=$value;
+    $this->attrubutes['slug'] = Str::slug($value);
+
+}
+
 }
