@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        User::factory()->count(rand(1, 5))->create()->each(function($u){
+        User::factory()->count(5)->create()->each(function($u){
             $u->questions()
             ->saveMany(
                 Question::factory()->count(rand(1, 5))->make()
