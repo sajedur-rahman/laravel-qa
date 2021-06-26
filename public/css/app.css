@@ -10942,4 +10942,40 @@ a.text-dark:focus {
   }
 }
 
+.counters {
+  margin-right: 30px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.counters strong {
+  display: block;
+  font-size: 2em;
+}
+
+.counters .vote,
+.counters .answer {
+  width: 60px;
+  height: 60px;
+}
+
+.counters .status.unanswered {
+  border: 1px solid #861717;
+  color: #861717;
+}
+
+.counters .status.answered {
+  border: 1px solid #5fb97e;
+  color: #5fb97e;
+}
+
+.counters .status.answered-accepted {
+  background: #5fb97e;
+  color: #fff;
+}
+
+.counters .view {
+  margin-top: 10px;
+}
+
 
