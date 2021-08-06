@@ -22,7 +22,7 @@
                                 <svg class="fas fa-caret-down fa-3x"></svg>
                             </a>
 
-                            <a title="Mark this answer the best answer" class="vote-accepted mt-2">
+                            <a title="Mark this answer the best answer" class="{{ $answer->status }} mt-2">
                                 <svg class="fas fa-check fa-2x"></svg>
 
                             </a>

@@ -43,8 +43,15 @@ class Answer extends Model
 
         static::deleted(function ($answer){
             // echo"answer created\n";
-             $answer->question->decrement('answers_count');
+            $question= $answer->question;
+            $question->decrement('answers_count');
            // $answer->question->save(); // no need its call automatically. 
+            if($question->best_answe_id === $answer->id){
+                $question->best_answe_id = null;
+                $question->save();
+            }
+
+
          });
 
     }
@@ -53,6 +60,12 @@ class Answer extends Model
     {
         return $this->created_at->diffForHumans();
     }
+
+    public function getStatusAttribute()
+    {
+        return $this->id === $this->question->best_answer_id ? 'vote-accepted' : '';
+    }
+
 
 
 }
