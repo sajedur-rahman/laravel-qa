@@ -54,7 +54,6 @@
                                                         onclick="return confirm('Are you sure?')">Delete</button>
                                                 </form>
                                             @endcan
-
                                         </div>
 
                                     </div>
