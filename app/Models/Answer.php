@@ -43,13 +43,13 @@ class Answer extends Model
 
         static::deleted(function ($answer){
             // echo"answer created\n";
-            $question= $answer->question;
-            $question->decrement('answers_count');
+           // $question= $answer->question;
+            $answer->question->decrement('answers_count');
            // $answer->question->save(); // no need its call automatically. 
-            if($question->best_answe_id === $answer->id){
-                $question->best_answe_id = null;
-                $question->save();
-            }
+            // if($question->best_answe_id === $answer->id){
+            //     $question->best_answe_id = null;
+            //     $question->save();
+            // }
 
 
          });
